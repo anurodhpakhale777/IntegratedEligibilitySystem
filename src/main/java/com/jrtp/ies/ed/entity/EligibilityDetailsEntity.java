@@ -26,33 +26,33 @@ public class EligibilityDetailsEntity {
 	@Column(name="ED_TRACE_ID")
 	private Integer edTraceId;
 	
-	@Column(name="BENEFIT_AMT")
-	private long benefitAmt;
-	
 	@Column(name="CASE_NUM")
 	private int caseId;
 	
+	@Column(name="PLAN_NAME")
+	private String planName;
+
+	@Column(name="PLAN_STATUS")
+	private String planStatus;
+
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@Column(name="PLAN_START_DATE")
+	private Date planStartDate;
+
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@Column(name="PLAN_END_DATE")
+	private Date PlanEndDate;
+
+	@Column(name="BENEFIT_AMT")
+	private long benefitAmt;
+	
+	@Column(name="DENIAL_REASON")
+	private String denialReason;
+
 	@CreationTimestamp
 	@DateTimeFormat(pattern="dd/MM/yyyy")
 	@Column(name="CREATE_DATE")
 	private Date creationDate;
-	
-	@Column(name="DENIAL_REASON")
-	private String denialReason;
-	
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	@Column(name="PLAN_END_DATE")
-	private Date PlanEndDate;
-	
-	@Column(name="PLAN_NAME")
-	private String planName;
-	
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	@Column(name="PLAN_START_DATE")
-	private Date planStartDate;
-	
-	@Column(name="PLAN_STATUS")
-	private String planStatus;
 	
 	@UpdateTimestamp
 	@DateTimeFormat(pattern="dd/MM/yyyy")

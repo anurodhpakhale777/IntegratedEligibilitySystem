@@ -9,5 +9,5 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class CaseDetail extends Applicant {
 
-	private short caseId;
+	private Integer caseId;
 }

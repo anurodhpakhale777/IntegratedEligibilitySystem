@@ -1,4 +1,4 @@
-package com.jrtp.ies.co.model;
+package com.jrtp.ies.batch;
 
 import java.util.Date;
 

@@ -26,4 +26,6 @@ public interface PlanRepository extends JpaRepository<PlanEntity, Integer> {
 	@Query("update PlanEntity p set p.isActive = false where p.id = :planId")
 	int softDeletePlan(@Param("planId") Integer planId);
 
+	//for CO module
+	PlanEntity findByPlanName(String planName);
 }

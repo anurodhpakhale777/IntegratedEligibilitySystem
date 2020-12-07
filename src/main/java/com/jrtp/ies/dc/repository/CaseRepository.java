@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.jrtp.ies.dc.entity.CaseDetailEntity;
 
 @Repository
-public interface CaseRepository extends JpaRepository<CaseDetailEntity, Short> {
+public interface CaseRepository extends JpaRepository<CaseDetailEntity, Integer> {
 
 	
 }
