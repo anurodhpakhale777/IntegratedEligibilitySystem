@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.jrtp.ies.constants.AppConstants;
 import com.jrtp.ies.dc.model.CasePlan;
+import com.jrtp.ies.dc.model.ChildDetail;
+import com.jrtp.ies.dc.model.EducationDetail;
 import com.jrtp.ies.dc.model.IncomeDetail;
 import com.jrtp.ies.dc.service.DataCollectionService;
 
@@ -32,14 +34,23 @@ public class SelectPlanController {
 				break;
 				
 			case AppConstants.CCAP_CASE:
-				
+				ChildDetail childDet = new ChildDetail();
+				childDet.setCaseId(casePlan.getCaseId());
+				childDet.setApplicantName(casePlan.getFirstName()+" "+casePlan.getLastName());
+				model.addAttribute("childDet", childDet);
+				pageName = "childDetails";
 				break;
 			
 			case AppConstants.KT_WORKS_CASE:
-				
+				EducationDetail educationDet = new EducationDetail();
+				educationDet.setCaseId(casePlan.getCaseId());
+				educationDet.setApplicantName(casePlan.getFirstName()+" "+casePlan.getLastName());
+				model.addAttribute("educationDet", educationDet);
+				pageName = "educationDetails";
 				break;
 			
 			default:
+				model.addAttribute("failMsg", "Page Not Found");
 				pageName = "selectPlan";
 				break;
 			}

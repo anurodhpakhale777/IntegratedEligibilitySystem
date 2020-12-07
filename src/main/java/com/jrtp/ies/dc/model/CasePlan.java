@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class CasePlan {
 
-	private short caseId;
+	private int caseId;
 	
 	private String firstName;
 	

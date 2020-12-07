@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jrtp.ies.constants.AppConstants;
 import com.jrtp.ies.dc.model.ChildDetail;
@@ -25,9 +24,11 @@ public class CcapController {
 		boolean isChildDetSaved = dataCollectionServ.saveChildCareDetails(childDet);
 		String pageName = null;
 		if(isChildDetSaved) {
-			
+			model.addAttribute("caseId", childDet.getCaseId());
+			pageName = "eligibilityDetermination";
 		}else {
 			model.addAttribute("failMsg", AppConstants.CCAP_CASE+" "+AppConstants.PLAN_SAVE_ERRMSG);
+			pageName = "childDetails";
 		}
 		return pageName;
 	}

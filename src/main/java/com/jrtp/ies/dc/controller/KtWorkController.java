@@ -21,9 +21,11 @@ public class KtWorkController {
 		boolean isEducationDetSaved = dataCollectionServ.saveEducationDetails(educationDet);
 		String pageName = null;
 		if(isEducationDetSaved) {
-			
+			model.addAttribute("caseId", educationDet.getCaseId());
+			pageName = "eligibilityDetermination";
 		}else {
 			model.addAttribute("failMsg", AppConstants.KT_WORKS_CASE+" "+AppConstants.PLAN_SAVE_ERRMSG);
+			pageName = "educationDetails";
 		}
 		return pageName;
 	}

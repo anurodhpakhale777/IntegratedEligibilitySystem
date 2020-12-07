@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class IncomeDetail {
 
-	private short caseId;
+	private int caseId;
 	
 	private String applicantName;
 	

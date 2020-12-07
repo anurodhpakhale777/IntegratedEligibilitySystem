@@ -14,7 +14,7 @@
 		<div>
 			<span style="color: red">${failMsg}</span>
 		</div>
-		<form:form action="saveKtWorkDetails" methodParam="post" modelAttribute="educationDet" >
+		<form:form action="saveSnapDetails" methodParam="post" modelAttribute="educationDet" >
 			<table>
 				<tr>
 					<td>Case-ID :</td>

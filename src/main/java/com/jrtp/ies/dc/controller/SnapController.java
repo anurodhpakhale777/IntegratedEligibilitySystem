@@ -21,9 +21,11 @@ public class SnapController {
 		boolean isIncomeDetSaved = dataCollectionServ.saveIncomeDetails(incomeDet);
 		String pageName = null;
 		if(isIncomeDetSaved) {
-			
+			model.addAttribute("caseId", incomeDet.getCaseId());
+			pageName = "eligibilityDetermination";
 		}else {
 			model.addAttribute("failMsg", AppConstants.SNAP_CASE+" "+AppConstants.PLAN_SAVE_ERRMSG);
+			pageName = "incomeDetails";
 		}
 		return pageName;
 	}

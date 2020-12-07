@@ -1,6 +1,5 @@
 package com.jrtp.ies.ar.model;
 
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
